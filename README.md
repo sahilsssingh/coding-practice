@@ -1,1 +1,1 @@
-*IGNORE THIS REPOSITORY* just for practice!
+IGNORE THIS REPOSITORY *just for practice!*
