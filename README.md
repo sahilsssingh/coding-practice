@@ -1,1 +1,1 @@
-*ignore this repository* just for practice!
+*IGNORE THIS REPOSITORY* just for practice!
