@@ -1,0 +1,41 @@
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+text = input("Type your message:\n").lower()
+shift = int(input("Type the shift number:\n"))
+
+
+
+
+
+def caesar(choice,text_letters,shift_number):
+    if choice=="encode":
+        encrypt(original_text=text_letters, shift_amount=shift_number)
+    elif choice=="decode":
+        decrypt(original_text=text_letters, shift_amount=shift_number)
+    else:
+        print("invalid input! try again!")
+
+def encrypt(original_text, shift_amount):
+    shifted_letter = ""
+    for char in original_text:
+        ioc = alphabet.index(char) + shift_amount
+        if ioc > 25:
+            ioc -= 26
+            shifted_letter += alphabet[ioc]
+        else:
+            shifted_letter += alphabet[ioc]
+    print(f"Here is the encoded result: {shifted_letter}")
+
+def decrypt(original_text,shift_amount):
+    shifted_letter = ""
+    for char in original_text:
+        ioc = alphabet.index(char) - shift_amount
+        if ioc < 0:
+            ioc =26-shift_amount
+            shifted_letter += alphabet[ioc]
+        else:
+            shifted_letter += alphabet[ioc]
+    print(f"Here is the decoded result: {shifted_letter}")
+
+caesar(choice=direction,text_letters=text,shift_number=shift)
